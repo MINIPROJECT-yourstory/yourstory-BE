@@ -22,6 +22,7 @@ public class WorkDto {
     private String day;
     private String place;
     private int person;
+    private Long daysSinceStart;
 
     // Work 엔티티를 WorkDTO로 변환하는 메서드
     public static WorkDto fromEntity(Work work) {
@@ -35,7 +36,8 @@ public class WorkDto {
                 work.getOrg(),
                 work.getDay(),
                 work.getPlace(),
-                work.getPerson()
+                work.getPerson(),
+                work.getDaysSinceStart()
         );
     }
 }

@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.concurrent.locks.Condition;
 
@@ -44,4 +45,8 @@ public class Work {
 
     private String content; // 내용
 
+    // 시작한 지 N일째 계산
+    public long getDaysSinceStart() {
+        return ChronoUnit.DAYS.between(startTime, LocalDate.now());
+    }
 }
